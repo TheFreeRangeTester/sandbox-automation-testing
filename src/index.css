@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#shadow-root-example {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
