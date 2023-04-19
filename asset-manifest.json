@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/sandbox-automation-testing/static/css/main.5cd83425.css",
-    "main.js": "/sandbox-automation-testing/static/js/main.c5e7410f.js",
+    "main.js": "/sandbox-automation-testing/static/js/main.cddc4bb1.js",
     "static/js/787.ae3da512.chunk.js": "/sandbox-automation-testing/static/js/787.ae3da512.chunk.js",
     "index.html": "/sandbox-automation-testing/index.html",
     "main.5cd83425.css.map": "/sandbox-automation-testing/static/css/main.5cd83425.css.map",
-    "main.c5e7410f.js.map": "/sandbox-automation-testing/static/js/main.c5e7410f.js.map",
+    "main.cddc4bb1.js.map": "/sandbox-automation-testing/static/js/main.cddc4bb1.js.map",
     "787.ae3da512.chunk.js.map": "/sandbox-automation-testing/static/js/787.ae3da512.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5cd83425.css",
-    "static/js/main.c5e7410f.js"
+    "static/js/main.cddc4bb1.js"
   ]
 }
