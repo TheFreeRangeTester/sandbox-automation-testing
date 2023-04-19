@@ -13,12 +13,16 @@ import {
 } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 
-
 function App() {
   const [modalShow, setModalShow] = React.useState(false);
   const [dynamicButtonId, setDynamicButtonId] = React.useState(uuidv4());
   const [hiddenElementVisible, setHiddenElementVisible] = React.useState(false);
   const [tableData, setTableData] = useState([]);
+  const [staticTableData] = useState([
+    { id: 1, name: 'Messi', age: 35, email: 'messi@example.com' },
+    { id: 2, name: 'Ronaldo', age: 38, email: 'ronaldo@example.com' },
+    { id: 3, name: 'Mbappe', age: 24, email: 'mbappe@example.com' },
+  ]);
 
   const handleDynamicButtonClick = () => {
     setDynamicButtonId(uuidv4());
@@ -55,13 +59,13 @@ function App() {
 
       <Row className="mb-5">
         <Col>
-          <h2>Botón con ID dinámico y elemento oculto</h2>
+          <h2>Botón con ID dinámico y elemento oculto 😮</h2>
           <Button id={dynamicButtonId} onClick={handleDynamicButtonClick}>
-            Clic para generar ID dinámico y mostrar elemento oculto
+            Hacé click para generar un ID dinámico y mostrar el elemento oculto
           </Button>
           {hiddenElementVisible && (
             <p id="hidden-element" className="mt-3">
-              Este es un elemento oculto que se muestra después de 3 segundos.
+              OMG, aparezco después de 3 segundos de haber hecho click en el botón 👻.
             </p>
           )}
         </Col>
@@ -71,13 +75,13 @@ function App() {
         <Col>
           <Form>
             <Form.Group controlId="formBasicText">
-              <Form.Label className="h4">Texto</Form.Label>
-              <Form.Control type="text" placeholder="Ingresa texto" />
+              <Form.Label className="h4">Un aburrido texto</Form.Label>
+              <Form.Control type="text" placeholder="Ingresá texto" />
             </Form.Group>
 
             <Form.Group controlId="formBasicCheckbox" className="mt-3">
               <Form.Label className="h4">Checkboxes</Form.Label>
-              {['Checkbox 1', 'Checkbox 2', 'Checkbox 3', 'Checkbox 4', 'Checkbox 5'].map((label, index) => (
+              {['Pizza 🍕', 'Hamburguesa 🍔', 'Pasta 🍝', 'Helado 🍧', 'Torta 🍰'].map((label, index) => (
                 <Form.Check key={index} type="checkbox" id={`checkbox-${index}`} label={label} />
               ))}
             </Form.Group>
@@ -86,13 +90,13 @@ function App() {
               <Form.Label className="h4">Radio Buttons</Form.Label>
               <Form.Check
                 type="radio"
-                label="Opción 1"
+                label="Si"
                 name="formRadioOptions"
                 id="formRadio1"
               />
               <Form.Check
                 type="radio"
-                label="Opción 2"
+                label="No"
                 name="formRadioOptions"
                 id="formRadio2"
               />
@@ -103,10 +107,10 @@ function App() {
                 <h3>Dropdown</h3>
               </Form.Label>
               <Form.Control as="select">
-                <option>Selecciona una opción</option>
-                <option>Opción 1</option>
-                <option>Opción 2</option>
-                <option>Opción 3</option>
+                <option>Seleccioná un deporte</option>
+                <option>Fútbol</option>
+                <option>Tennis</option>
+                <option>Basketball</option>
               </Form.Control>
             </Form.Group>
 
@@ -119,10 +123,14 @@ function App() {
 
       <Row className="mb-5">
         <Col>
-          <DropdownButton id="dropdown-basic-button" title="Dropdown">
-            <Dropdown.Item href="#/action-1">Acción 1</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Acción 2</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Acción 3</Dropdown.Item>
+          <DropdownButton id="dropdown-basic-button" title="Día de la semana">
+            <Dropdown.Item href="#/action-1">Lunes</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Martes</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Miércoles</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Jueves</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Viernes</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Sábado</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Domingo</Dropdown.Item>
           </DropdownButton>
         </Col>
       </Row>
@@ -147,7 +155,7 @@ function App() {
             </Modal.Header>
             <Modal.Body>
               <p>
-                Este es un popup de ejemplo para practicar automation testing.
+                ¿Viste? ¡Apareció un Pop-up!
               </p>
             </Modal.Body>
             <Modal.Footer>
@@ -179,6 +187,31 @@ function App() {
                       {cell.number}
                     </td>
                   ))}
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Col>
+      </Row>
+      <Row className="mb-5">
+        <Col>
+          <h2>Tabla estática</h2>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              {staticTableData.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.age}</td>
+                  <td>{item.email}</td>
                 </tr>
               ))}
             </tbody>
